@@ -94,6 +94,7 @@ function winnerP1() {
          <h3>player stats1</h3>
          <button id="js__card--delete"></button>
         </article>
+        <img class="game__delete--icon" src="images/delete.svg"/>
        </section>`
 	)};
        // clearForms()

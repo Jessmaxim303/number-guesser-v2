@@ -300,11 +300,16 @@ header {
 	border-top: 2px solid grey;
 }
 
+<<<<<<< HEAD
 #js__card--delete {
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
 	background: #636363;
+=======
+.game__delete--icon {
+	
+>>>>>>> master
 }
 
 
