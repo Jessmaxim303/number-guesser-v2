@@ -81,6 +81,7 @@ if (parseInt(playerOneGuess.value) === randomNumber){
         <article id="gamme__card--states">
          <h3>player stats</h3>
         </article>
+        <img class="game__delete--icon" src="images/delete.svg"/>
        </section>`
 	)};
 }
