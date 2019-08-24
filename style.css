@@ -58,26 +58,29 @@ header {
 
 #left__set--range {
 	width: 100%;
-	height: 150px;
+	height: 130px;
 	background: #ffffff;
 	border: 2px solid #d0d2d3;
 	padding: 2%;
+	color: #6e6e6e;
 }
 
 #left__submit--guess {
 	width: 100%;
-	height: 275px;
+	height: 305px;
 	background: #ffffff;
 	border: 2px solid #d0d2d3;
 	padding: 2%;
+	color: #6e6e6e;
 }
 
 #left__latest--score {
-	display: flex;
 	width: 100%;
-	height: 200px;
+	height: 220px;
 	background: #ffffff;
 	border: 2px solid #d0d2d3;
+	color: #636363;
+	padding: 2%;
 }
 
 #range__input--container {
@@ -98,11 +101,8 @@ header {
 
 #current__range--container {
 	width: 100%;
-	/* height: 45px; */
 	align-items: center;
-/*	margin: 30px 0;*/
 	display: inline-block;
-	/* display: grid; */
 }
 #current__range--container p {
 /*	display: inline;*/
@@ -130,13 +130,6 @@ header {
 	height: 60px;
 }
 
-/* #current__range--container {
-	width: 100%;
-	height: 35px;
-	align-items: center;
-	display: block;
-} */
-
 #js__guess--button {
 	display: flex;
 	align-items: center;
@@ -162,22 +155,34 @@ header {
 	width: 100%;
 	height: 35px;
 	display: inline;
+	padding-left: 10px;
+	font-size: 18px;
+	color: #6e6e6e;
 }
 
 #js__input--name2 {
 	width: 100%;
 	height: 35px;
 	display: inline;
+	padding-left: 10px;
+	font-size: 18px;
+	color: #6e6e6e;
 }
 
 #js__name1--guess {
 	width: 100%;
 	height: 35px;
+	padding-left: 10px;
+	font-size: 18px;
+	color: #6e6e6e;
 }
 
 #js__name2--guess {
 	width: 100%;
 	height: 35px;
+	padding-left: 10px;
+	font-size: 18px;
+	color: #6e6e6e;
 }
 
 #js__name2--guess {
@@ -185,29 +190,50 @@ header {
 }
 
 /* NEW CSS CODE */
-h4 {
-	display: block;
-	width: 100%;
-}
 
 .score--card {
 	width: 50%;
+	height: 100%;
 	text-align: center;
+	margin: 8px;
+}
+
+#latest__score--text {
+	width: 300px;
+	height: 15%;
+	display: block;
 }
 
 .guess--text {
 	font-size: 100px;
+	color: #dd1972;
+	font-weight: 700;
+	line-height: 90%;
+}
+
+#temp__score--score {
+	height: 80%;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
 }
 
 #js__min--range {
 	display: block;
 	width: 90%;
 	height: 35px;
+	padding-left: 10px;
+	font-size: 18px;
+	color: #6e6e6e;
+
 }
 
 #js__max--range {
 	width: 90%;
 	height: 35px;
+	padding-left: 10px;
+	font-size: 18px;
+	color: #6e6e6e;
 }
 
 #mn-range,
@@ -249,12 +275,13 @@ h4 {
 }
 
 #game__card {
-	width: 85%;
+	width: 100%;
 	height: 325px;
 	background: #f7f7f7;
+	padding: 1.5%;
 }
 
-#gamme__card--vs {
+#game__card--vs {
 	height: 20%;
 	border-bottom: 2px solid grey;
 	display: flex;
@@ -262,15 +289,22 @@ h4 {
 	justify-content: space-around;
 }
 
-#gamme__card--winner h1 {
+#game__card--winner h1 {
 	height: 60%;
 	text-align: center;
 	font-size: 42px;
 }
 
-#gamme__card--states {
+#game__card--stats {
 	height: 20%;
 	border-top: 2px solid grey;
+}
+
+#js__card--delete {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: #636363;
 }
 
 
