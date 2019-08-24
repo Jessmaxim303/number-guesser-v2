@@ -38,32 +38,28 @@
 				<button id="js__range--button">
 					UPDATE
 				</button>
-
 			</article>
 		</article>
 		<article id="left__submit--guess">
 			<h3>
 				The Current Range is <span id="min__number--display">1</span> to <span id="max__number--display">100</span>
 			</h3>
-
 			<article id="current__range--container">
-
 				<h3>
 					Challenger 1
 				</h3>
-
 				<section class="form-box">
 					<div id="p1">
 						<p>
 							Name
 						</p>
-						<input id="js__input--name1" type="text" name="">
+						<input id="js__input--name1" type="text" name=""></input>
 					</div>
 					<div id="g1">
 						<p>
 							Guess
 						</p>
-						<input id="js__name1--guess" type="text" name="">
+						<input id="js__name1--guess" type="number" name=""></input>
 					</div>
 				</section>
 				<!-- <img class="error" src="./error-icon.svg"> -->
@@ -80,19 +76,17 @@
 						<p>
 							Name
 						</p>
-						<input id="js__input--name2" type="text" name="">
+						<input id="js__input--name2" type="text" name=""></input>
 					</div>
 
 					<div id="g2">
 						<p>
 							Guess
 						</p>
-						<input id="js__name2--guess" type="text" name="">
+						<input id="js__name2--guess" type="number" name=""></input>
 					</div>
 				</section>
-
 			</article>
-
 			<article id="js__guess--button">
 				<button id="guess__submit--button" class="button">SUBMIT GUESS</button>
 				<button id="guess__reset--button" class="button">RESET GAME</button>
@@ -103,14 +97,13 @@
 		<article id="left__latest--score">
 			<h3>Lastest Score</h3>
 			<article class="score--card">
-				<h4>Challenger 1 Name</h4>
+				<h4 id="score__card--name1">Challenger 1 Name</h4>
 				<p>current guess</p>
-
 				<span class="guess--text" id="player__one--guess">--</span>
 			<div id="p__inner"></div>
 			</article>
 			<article class="score--card">
-				<h4>Challenger 2 Name</h4>
+				<h4 id="score__card--name2">Challenger 2 Name</h4>
 				<p>current guess</p>
 				<span class="guess--text" id="player__two--guess">--</span>
 				<div id="p2__inner"></div>
@@ -118,8 +111,10 @@
 		</article>
 	</section>
 	<section class="main__right--conatiner">
+		<article id="js__game--outcome">
+		</article>
 	</section>
 </body>
-<script src="main.js" type="text/javascript"></script>
 
+<script src="main.js" type="text/javascript"></script>
 </html>
