@@ -105,7 +105,7 @@ function winnerP1() {
         </article>
         <article id="game__card--states">
          <h3>player stats1</h3>
-         <button id="js__card--delete"></button>
+         <img id="js__card--delete" src="x-button.png">
         </article>
        </section>`
 	)};
@@ -138,7 +138,7 @@ function winnerP2() {
         </article>
         <article id="game__card--stats">
          <h3>player stats</h3>
-         <button id="js__card--delete"></button>
+         <img id="js__card--delete" src="x-button.png">
         </article>
        </section>`
   )};

@@ -80,7 +80,7 @@ header {
 	background: #ffffff;
 	border: 2px solid #d0d2d3;
 	color: #636363;
-	padding: 2%;
+	padding: 7px;
 }
 
 #range__input--container {
@@ -165,7 +165,7 @@ header {
 	width: 100%;
 	height: 35px;
 	display: inline;
-	padding-left: 10px;
+	padding-left: 6px;
 	font-size: 18px;
 	color: #6e6e6e;
 }
@@ -174,7 +174,7 @@ header {
 	width: 100%;
 	height: 35px;
 	display: inline;
-	padding-left: 10px;
+	padding-left: 6px;
 	font-size: 18px;
 	color: #6e6e6e;
 }
@@ -182,7 +182,7 @@ header {
 #js__name1--guess {
 	width: 100%;
 	height: 35px;
-	padding-left: 10px;
+	padding-left: 6px;
 	font-size: 18px;
 	color: #6e6e6e;
 }
@@ -190,7 +190,7 @@ header {
 #js__name2--guess {
 	width: 100%;
 	height: 35px;
-	padding-left: 10px;
+	padding-left: 6px;
 	font-size: 18px;
 	color: #6e6e6e;
 }
@@ -232,7 +232,7 @@ header {
 	display: block;
 	width: 90%;
 	height: 35px;
-	padding-left: 10px;
+	padding-left: 7px;
 	font-size: 18px;
 	color: #6e6e6e;
 
@@ -241,7 +241,7 @@ header {
 #js__max--range {
 	width: 90%;
 	height: 35px;
-	padding-left: 10px;
+	padding-left: 7px;
 	font-size: 18px;
 	color: #6e6e6e;
 }
