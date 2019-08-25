@@ -151,6 +151,16 @@ header {
 	font-weight: bold;
 }
 
+.reset__button {
+	background: #d0d2d3;
+	color: #ffffff;
+}
+
+.clear__button {
+	background: #d0d2d3;
+	color: #ffffff;
+}
+
 #js__input--name1 {
 	width: 100%;
 	height: 35px;
@@ -300,16 +310,11 @@ header {
 	border-top: 2px solid grey;
 }
 
-<<<<<<< HEAD
 #js__card--delete {
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
 	background: #636363;
-=======
-.game__delete--icon {
-	
->>>>>>> master
 }
 
 
