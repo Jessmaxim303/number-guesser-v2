@@ -4,6 +4,8 @@ var rangeButton = document.getElementById('js__range--button');
 var minNumberDisplay = document.getElementById('min__number--display');
 var maxNumberDisplay = document.getElementById('max__number--display');
 var submitGuess = document.getElementById('guess__submit--button');
+var guessResetButton = document.getElementById('guess__reset--button');
+var guessClearButton = document.getElementById('guess__clear--button');
 var playerOneGuess = document.getElementById("js__name1--guess")
 var playerTwoGuess = document.getElementById("js__name2--guess")
 var jsInputName1 = document.getElementById("js__input--name1");
@@ -19,7 +21,7 @@ var pInner = document.getElementById("p__inner");
 var p2Inner = document.getElementById("p2__inner");
 var min = Math.ceil(minRange.value);
 var max = Math.floor(maxRange.value);
-var randomNumber = parseInt(0);
+var randomNumber = 0;
 var playerOneGuessCount = 0;
 var playerOneGuessCount = 0;
 var winnerWinner = "BOOM!";
@@ -28,41 +30,52 @@ var jsGameOutcome = document.getElementById('js__game--outcome');
 
 rangeButton.addEventListener('click', setRangeValue);
 submitGuess.addEventListener('click', changeText);
+guessResetButton.addEventListener('click', resetGame);
 
 function setRangeValue(){
-    setMinValue();
-    setMaxValue();
-    generateNumber();
+  setMinValue();
+  setMaxValue();
+  generateNumber();
+  resetActiveState();
 };
 
 function setMinValue(){
-    minNumberDisplay.innerText = minRange.value;
+  minNumberDisplay.innerText = minRange.value;
 };
 
 function setMaxValue(){
-    maxNumberDisplay.innerText = maxRange.value;
+  maxNumberDisplay.innerText = maxRange.value;
 };
 
 function generateNumber(){
-    min = Math.ceil(minRange.value);
-    max = Math.floor(maxRange.value);
-    randomNumber = Math.floor(Math.random() * (parseInt(max) - parseInt(min)) + (parseInt(min)));
-}
+  min = Math.ceil(minRange.value);
+  max = Math.floor(maxRange.value);
+  randomNumber = Math.floor(Math.random() * (parseInt(max) - parseInt(min)) + (parseInt(min)));
+};
 
 function changeText() {
-    currentGuessOne.innerText = playerOneGuess.value;
-    currentGuessTwo.innerText = playerTwoGuess.value;
-    winnerP1();
-    winnerP2();
-}
+  currentGuessOne.innerText = playerOneGuess.value;
+  currentGuessTwo.innerText = playerTwoGuess.value;
+  winnerP1();
+  winnerP2();
+};
 
 function clearForms() {
   minRange.value = '';
   maxRange.value = '';
   jsInputName1 = '';
   jsInputName2 = '';
-  // playerOneGuess.value = '';
-  // playerTwoGuess.value = '';
+};
+
+function resetActiveState(){
+  guessResetButton.classList.remove('reset__button');
+  guessClearButton.classList.remove('clear__button');
+};
+
+function resetGame(){
+  guessResetButton.classList.add('reset__button');
+  guessClearButton.classList.add('clear__button');
+  randomNumber = 0;
 };
 
 function winnerP1() {
@@ -94,7 +107,6 @@ function winnerP1() {
          <h3>player stats1</h3>
          <button id="js__card--delete"></button>
         </article>
-        <img class="game__delete--icon" src="images/delete.svg"/>
        </section>`
 	)};
        // clearForms()
