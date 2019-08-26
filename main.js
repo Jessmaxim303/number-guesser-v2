@@ -13,6 +13,11 @@ var jsInputName2 = document.getElementById("js__input--name2");
 var scoreCardName1 = document.getElementById("score__card--name1");
 var scoreCardName2 = document.getElementById("score__card--name2");
 var currentGuessOne = document.getElementById("player__one--guess");
+var jsCardDelete = document.getElementById("js__card--delete");
+var gameCardStats = document.getElementById("game__card--stats");
+var jsGameOutcome = document.getElementById("js__game--outcome");
+var gameCard = document.querySelector(".game__card");
+var gameCardVs = document.getElementById("game__card--vs");
 var guessOne = currentGuessOne.value;
 var guessParse = parseInt(guessOne);
 var playerTwoGuess = document.getElementById("js__name2--guess")
@@ -23,14 +28,12 @@ var min = Math.ceil(minRange.value);
 var max = Math.floor(maxRange.value);
 var randomNumber = 0;
 var playerOneGuessCount = 0;
-var playerOneGuessCount = 0;
-var winnerWinner = "BOOM!";
-var jsGameOutcome = document.getElementById('js__game--outcome');
-// var randomNumber = Math.floor(Math.random() * (max - min) + min);
+var playerTwoGuessCount = 0;
 
 rangeButton.addEventListener('click', setRangeValue);
 submitGuess.addEventListener('click', changeText);
 guessResetButton.addEventListener('click', resetGame);
+jsGameOutcome.addEventListener('click', deleteCard);
 
 function setRangeValue(){
   setMinValue();
@@ -85,12 +88,12 @@ function winnerP1() {
     scoreCardName1.innerText = jsInputName1.value;
     scoreCardName2.innerText = jsInputName2.value;
     jsGameOutcome.insertAdjacentHTML('afterbegin',
-      `<section id="game__card">
+      `<section class="game__card">
         <article id="game__card--vs">
           <h3>
             ${jsInputName1.value}
           </h3>
-          <h4>
+          <h4 id="gamecard__h4--text">
             vs.
           </h4>
           <h3>
@@ -101,29 +104,43 @@ function winnerP1() {
         <h1>
           ${jsInputName1.value}
         </h1>
-        <h1>WINNER!</h1>
+        <h1 id="gamecard__winner--text">WINNER!</h1>
         </article>
-        <article id="game__card--states">
-         <h3>player stats1</h3>
-         <img id="js__card--delete" src="x-button.png">
+        <article id="game__card--stats">
+        <h3>
+        ${playerOneGuessCount} <span id="guess__count--text">GUESSES</span>
+        </h3>
+         <img class="js__card--delete" src="images/delete.svg">
         </article>
        </section>`
 	)};
+
+  if (parseInt(playerOneGuess.value) > randomNumber){
+    playerOneGuessCount++;
+    pInner.innerText = "That's too high";
+    scoreCardName1.innerText = jsInputName1.value;
+    scoreCardName2.innerText = jsInputName2.value;
+  } else if (parseInt(playerOneGuess.value) < randomNumber){
+    playerOneGuessCount++;
+    scoreCardName1.innerText = jsInputName1.value;
+    scoreCardName2.innerText = jsInputName2.value;
+    pInner.innerText = "That's too low";
+  } 
        // clearForms()
-}
+};
 
 function winnerP2() {
   if (parseInt(playerTwoGuess.value) === randomNumber){
-    pInner.innerText = "BOOM!";
+    p2Inner.innerText = "BOOM!";
     scoreCardName1.innerText = jsInputName1.value;
     scoreCardName2.innerText = jsInputName2.value;
     jsGameOutcome.insertAdjacentHTML('afterbegin',
-      `<section id="game__card">
+      `<section class="game__card">
         <article id="game__card--vs">
           <h3>
             ${jsInputName1.value}
           </h3>
-          <h4>
+          <h4 id="gamecard__h4--text">
             vs.
           </h4>
           <h3>
@@ -134,20 +151,35 @@ function winnerP2() {
         <h1>
           ${jsInputName2.value}
         </h1>
-        <h1>WINNER!</h1>
+        <h1 id="gamecard__winner--text">WINNER!</h1>
         </article>
         <article id="game__card--stats">
-         <h3>player stats</h3>
-         <img id="js__card--delete" src="x-button.png">
+        <h3>
+           ${playerTwoGuessCount} <span id="guess__count--text">GUESSES</span>
+        </h3>
+         <img class="js__card--delete" src="images/delete.svg">
         </article>
        </section>`
   )};
+
+    if (parseInt(playerTwoGuess.value) > randomNumber){
+    playerTwoGuessCount++;
+    scoreCardName1.innerText = jsInputName1.value;
+    scoreCardName2.innerText = jsInputName2.value;
+    p2Inner.innerText = "That's too high";
+  } else if (parseInt(playerTwoGuess.value) < randomNumber){
+    playerTwoGuessCount++;
+    scoreCardName1.innerText = jsInputName1.value;
+    scoreCardName2.innerText = jsInputName2.value;
+    p2Inner.innerText = "That's too low";
+  } 
     // clearForms()
 }
 
-    // if (parseInt(playerOneGuess.value) > randomNumber) {
-//          pInner.innerText = "that's too high";
-//     } else {
-//             pInner.innerText = "that's too low";
-// }
+function deleteCard(e){
+  if (e.target.classList.contains("js__card--delete")){
+  e.target.parentNode.parentNode.remove();
+ }
+}
+
 
