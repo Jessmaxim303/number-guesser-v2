@@ -27,13 +27,13 @@ header {
 	grid-area: header;
 	background: #404041;
 	color: #dd1972;
-	font-size: 2.5vw;
+	font-size: 2.4vw;
 	text-align: center;
-	padding: 2.5%;
+	padding: 2.25%;
 }
 
 #header__h1 {
-	line-height: 60%;
+	line-height: 70%;
 }
 
 #header__p {
@@ -43,6 +43,11 @@ header {
 
 #h1__font--change {
 	font-weight: 300;
+}
+
+#text__decor {
+	position: relative;
+	bottom: 8px;
 }
 
 /*LEFT SIDE / GAME ********************************************/
@@ -284,10 +289,12 @@ header {
 	padding: 3%;
 }
 
-#game__card {
+.game__card {
 	width: 100%;
 	height: 325px;
+	border: 2px solid #636363;
 	background: #f7f7f7;
+	color: #6E6E6E;
 	padding: 1.5%;
 }
 
@@ -299,22 +306,44 @@ header {
 	justify-content: space-around;
 }
 
-#game__card--winner h1 {
+#game__card--vs h3 {
+	font-size: 2.3vw;
+}
+
+#gamecard__h4--text {
+	font-size: 1.4vw;
+	font-weight: lighter;
+	border: 0 dotted purple;
+}
+
+#game__card--winner {
 	height: 60%;
+	font-weight: 700;
 	text-align: center;
-	font-size: 42px;
+	font-size: 7vw;
+}
+
+#gamecard__winner--text {
+	font-weight: 300;
+	font-size: 4vw;
 }
 
 #game__card--stats {
 	height: 20%;
 	border-top: 2px solid grey;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
-#js__card--delete {
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	background: #636363;
+.js__card--delete {
+	width: 35px;
+	height: 35px;
+	float: right;
+}
+
+#guess__count--text {
+	font-weight: 300;
 }
 
 
