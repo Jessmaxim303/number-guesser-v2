@@ -182,4 +182,11 @@ function deleteCard(e){
  }
 }
 
+// function minGuessRange(){
+//   var minRangeGuess = document.getElementById("js__name1--guess").min;
+//   minRangeGuess.innerHTML = minRange;
+// }
+
+
+
 
