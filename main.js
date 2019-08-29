@@ -1,15 +1,15 @@
-var minRange = document.getElementById('js__min--range');
-var maxRange = document.getElementById('js__max--range');
+var minRange = document.querySelector('.js__min--range');
+var maxRange = document.querySelector('.js__max--range');
 var rangeButton = document.getElementById('js__range--button');
 var minNumberDisplay = document.getElementById('min__number--display');
 var maxNumberDisplay = document.getElementById('max__number--display');
 var submitGuess = document.getElementById('guess__submit--button');
 var guessResetButton = document.getElementById('guess__reset--button');
 var guessClearButton = document.getElementById('guess__clear--button');
-var playerOneGuess = document.getElementById("js__name1--guess")
-var playerTwoGuess = document.getElementById("js__name2--guess")
-var jsInputName1 = document.getElementById("js__input--name1");
-var jsInputName2 = document.getElementById("js__input--name2");
+var playerOneGuess = document.querySelector(".js__name1--guess")
+var playerTwoGuess = document.querySelector(".js__name2--guess")
+var jsInputName1 = document.querySelector(".js__input--name1");
+var jsInputName2 = document.querySelector(".js__input--name2");
 var scoreCardName1 = document.getElementById("score__card--name1");
 var scoreCardName2 = document.getElementById("score__card--name2");
 var currentGuessOne = document.getElementById("player__one--guess");
@@ -20,7 +20,7 @@ var gameCard = document.querySelector(".game__card");
 var gameCardVs = document.getElementById("game__card--vs");
 var guessOne = currentGuessOne.value;
 var guessParse = parseInt(guessOne);
-var playerTwoGuess = document.getElementById("js__name2--guess")
+var playerTwoGuess = document.querySelector(".js__name2--guess")
 var currentGuessTwo = document.getElementById("player__two--guess")
 var pInner = document.getElementById("p__inner");
 var p2Inner = document.getElementById("p2__inner");
@@ -31,7 +31,7 @@ var playerOneGuessCount = 0;
 var playerTwoGuessCount = 0;
 
 rangeButton.addEventListener('click', setRangeValue);
-submitGuess.addEventListener('click', changeText);
+submitGuess.addEventListener('click', mainGameFunction);
 guessResetButton.addEventListener('click', resetGame);
 jsGameOutcome.addEventListener('click', deleteCard);
 
@@ -51,16 +51,19 @@ function setMaxValue(){
 };
 
 function generateNumber(){
+  errorMinMaxRange();
   min = Math.ceil(minRange.value);
   max = Math.floor(maxRange.value);
   randomNumber = Math.floor(Math.random() * (parseInt(max) - parseInt(min)) + (parseInt(min)));
 };
 
-function changeText() {
+function mainGameFunction() {
   currentGuessOne.innerText = playerOneGuess.value;
   currentGuessTwo.innerText = playerTwoGuess.value;
   winnerP1();
   winnerP2();
+  errorPlayerName();
+  errorGuess()
 };
 
 function clearForms() {
@@ -182,10 +185,47 @@ function deleteCard(e){
  }
 }
 
-// function minGuessRange(){
-//   var minRangeGuess = document.getElementById("js__name1--guess").min;
-//   minRangeGuess.innerHTML = minRange;
-// }
+function errorMinMaxRange(){
+  var invalidRangeError = document.querySelector('.alert__message--range');
+    if (minRange.value === '' || maxRange.value === '') {
+    invalidRangeError.innerText = ' Please set a min and max range';
+    invalidRangeError.insertAdjacentHTML('afterbegin', `<img src='images/error-icon.svg' class="error-img">`);
+    minRange.classList.add('error-box');
+    maxRange.classList.add('error-box');
+  }
+}
+
+function errorPlayerName(){
+  var p1NameError = document.querySelector('.alert__message--name1');
+  var p2NameError = document.querySelector('.alert__message--name2');
+  if (jsInputName1.value === ''){
+    p1NameError.innerText = ' Enter a name';
+    p1NameError.insertAdjacentHTML('afterbegin', `<img src='images/error-icon.svg' class="error-img">`);
+    jsInputName1.classList.add('error-box');
+  }
+  if (jsInputName2.value === ''){
+    console.log('error 2 name')
+    p2NameError.innerText = ' Enter a name';
+    p2NameError.insertAdjacentHTML('afterbegin', `<img src='images/error-icon.svg' class="error-img">`);
+    jsInputName2.classList.add('error-box');
+  }
+}
+
+function errorGuess(){
+  var p1GuessError = document.querySelector('.alert__message--guess1');
+  var p2GuessError = document.querySelector('.alert__message--guess2');
+  if (playerOneGuess.value === ''){
+    p1GuessError.innerText = ' Enter a guess';
+    playerOneGuess.classList.add('error-box');
+    p1GuessError.insertAdjacentHTML('afterbegin', `<img src='images/error-icon.svg' class="error-img">`);
+  }
+  if (playerTwoGuess.value === ''){
+    p2GuessError.innerText = ' Enter a guess';
+    playerTwoGuess.classList.add('error-box');
+    p2GuessError.insertAdjacentHTML('afterbegin', `<img src='images/error-icon.svg' class="error-img">`);
+  }
+}
+
 
 
 

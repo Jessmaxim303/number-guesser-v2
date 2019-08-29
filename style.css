@@ -101,15 +101,6 @@ header {
 	align-items: center;
 }
 
-#js__range--button {
-	width: 90px;
-	height: 35px;
-	background: #6E6E6E;
-	color: #ffffff;
-	border: none;
-	border-radius: 20px;
-}
-
 #current__range--container {
 	width: 100%;
 	align-items: center;
@@ -142,14 +133,6 @@ header {
 	height: 60px;
 }
 
-#js__guess--button {
-	display: flex;
-	align-items: center;
-	width: 100%;
-	height: 40px;
-	align-items: flex-end;
-}
-
 .button {
 	width: 150px;
 	height: 35px;
@@ -163,6 +146,14 @@ header {
 	font-weight: bold;
 }
 
+#js__guess--button {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 40px;
+	margin-top: 15px;
+}
+
 .reset__button {
 	background: #d0d2d3;
 	color: #ffffff;
@@ -173,7 +164,7 @@ header {
 	color: #ffffff;
 }
 
-#js__input--name1 {
+.js__input--name1 {
 	width: 100%;
 	height: 35px;
 	display: inline;
@@ -183,7 +174,7 @@ header {
 	border: 2px solid #d0d2d3;
 }
 
-#js__input--name2 {
+.js__input--name2 {
 	width: 100%;
 	height: 35px;
 	display: inline;
@@ -193,7 +184,7 @@ header {
 	border: 2px solid #d0d2d3;
 }
 
-#js__name1--guess {
+.js__name1--guess {
 	width: 100%;
 	height: 35px;
 	padding-left: 6px;
@@ -202,7 +193,15 @@ header {
 	border: 2px solid #d0d2d3;
 }
 
-#js__name2--guess {
+.guess1__input--box {
+	height: 70px;
+}
+
+.guess2__input--box {
+	height: 70px;
+}
+
+.js__name2--guess {
 	width: 100%;
 	height: 35px;
 	padding-left: 6px;
@@ -244,7 +243,7 @@ header {
 	flex-direction: row;
 }
 
-#js__min--range {
+.js__min--range {
 	width: 90%;
 	height: 35px;
 	padding-left: 7px;
@@ -253,7 +252,7 @@ header {
 	border: 2px solid #d0d2d3;
 }
 
-#js__max--range {
+.js__max--range {
 	width: 90%;
 	height: 35px;
 	padding-left: 7px;
@@ -265,7 +264,7 @@ header {
 #mn-range,
 #mx-range {
   width: 40%;
-	margin-top: 15px;
+	margin-top: 2%;
 }
 
 .error {
@@ -282,15 +281,22 @@ header {
 }
 
 #js__range--button {
-	margin: 6% 0 0 8%;
+	height: 35px;
+  margin: 6% 1% 0 1%;
 	width: 110px;
 	font-size: 16px;
 	font-weight: bold;
+	background: #6E6E6E;
+	color: #ffffff;
+	border: none;
+	border-radius: 20px;
 }
 
-#left__range--text {
-
-}
+/*.range__box {
+	display: flex;
+	align-items: flex-end;
+	border: 1px blue dotted;
+}*/
 
 /*RIGHT SIDE / PLAYER CARD ********************************/
 
@@ -357,6 +363,35 @@ header {
 
 #guess__count--text {
 	font-weight: 300;
+}
+
+.error-box {
+	border: 2px solid #dd1972;
+}
+
+.error-img {
+	height: 15px;
+  width: 15px;
+}
+
+.alert__message--range,
+.alert__message--name1,
+.alert__message--name2,
+.alert__message--guess1,
+.alert__message--guess2 {
+  color: #dd1972;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.alert__message--range {
+	margin-top: 5px;
+	position: absolute;
+	z-index: 2;
+}
+
+.current__range--h3{
+	margin-top: 25px;
 }
 
 /*MEDIA QUERY***********************/

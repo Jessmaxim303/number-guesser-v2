@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<title>Number Guesser</title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,700&display=swap" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-
 <body>
 	<header>
 		<h1 id="header__h1">
@@ -29,14 +27,16 @@
 				<p>
 					Min Range
 				</p>
-				<input id="js__min--range" type="number" name="min range"></input>
+				<input class="js__min--range" class="error-box" type="number"></input>
+				<p class="alert__message--range" class="error-box"></p>
 			</div>
 			<div id="mx-range">
 				<p>
 					Max Range
 				</p>
-				<input id="js__max--range" type="number" name="max range"></input>
-			</div>
+				<input class="js__max--range" type="number" name="max range"></input>
+			  <p class="alert__message--range" class="error-box"></p>
+	  	</div>
 				<button id="js__range--button">
 					UPDATE
 				</button>
@@ -55,22 +55,22 @@
 						<p>
 							Name
 						</p>
-						<input id="js__input--name1" type="text" name=""></input>
+						<input class="js__input--name1" type="text"></input>
+						<p class="alert__message--name1" class="error-box"></p> 
 					</div>
 					<div id="g1">
 						<p>
 							Guess
 						</p>
-						<input id="js__name1--guess" type="number" name=""></input>
+						<div class="guess1__input--box">
+							<input class="js__name1--guess" type="number" name=""></input>
+							<p class="alert__message--guess1" class="error-box"></p> 
+					  </div>
 					</div>
 				</section>
-				<!-- <img class="error" src="./error-icon.svg"> -->
-				<!-- <span class="error">Enter a name</span> -->
-				<!-- </section> -->
 			</article>
 			<article id="current__range--container">
-				<!-- <section class="form-box"> -->
-				<h3>
+				<h3 class="current__range--h3">
 					Challenger 2
 				</h3>
 				<section class="form-box">
@@ -78,14 +78,17 @@
 						<p>
 							Name
 						</p>
-						<input id="js__input--name2" type="text" name=""></input>
+						<input class="js__input--name2" type="text" name=""></input>
+						<p class="alert__message--name2" class="error-box"></p> 
 					</div>
-
 					<div id="g2">
 						<p>
 							Guess
 						</p>
-						<input id="js__name2--guess" type="number" name=""></input>
+						<div class="guess2__input--box">
+							<input class="js__name2--guess" type="number" name=""></input>
+					 	 <p class="alert__message--guess2" class="error-box"></p> 
+						</div>
 					</div>
 				</section>
 			</article>
